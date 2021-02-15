@@ -1,9 +1,16 @@
 "use strict";
 
-var _express = _interopRequireDefault(require("express"));
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _app = _interopRequireDefault(require("./app"));
 
-var app = (0, _express["default"])();
-app.listen(4000);
+require("./database");
+
+/**
+ * ? Archivo encargado para que aranque la aplicación
+ */
+// * importa express
+// * importa BD
+_app["default"].listen(4000);
+
 console.log('Server listen on port', 4000);
